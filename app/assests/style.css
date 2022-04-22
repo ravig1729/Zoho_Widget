@@ -1,0 +1,116 @@
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;    
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+  .card{
+    /* border-radius: 16px; */
+    position: relative;overflow: hidden;        
+    transition: 0.5s;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);        
+  }
+  
+  .card-body{        z-index: 1;    }
+  .card-body p{ padding: 0px 20px;  }
+  .card::before{
+    content: "";
+    padding: 10px;        
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    left: 0;        
+    background: #333;
+    /* background: radial-gradient(#1fe4f5, #3fbafe); */
+    transition: all 500ms;
+    z-index: 0;
+  }
+  .card:hover{
+   color: white; 
+  }
+  .card:hover::before{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  h2{
+    padding-top: 20px;
+    font-size: 50px;
+    color: #333;
+    font-weight: 700;
+  }
+
+  /* The Modal (background) */
+.zmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+}
+
+
+  /* Modal Header */
+.zmodal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Body */
+.zmodal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.zmodal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Modal Content */
+.zmodal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+
+/* The Close Button */
+.zclose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.zclose:hover,
+.zclose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
